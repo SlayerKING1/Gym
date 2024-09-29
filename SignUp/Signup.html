@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== FAVICON ===============-->
+
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICON ===============-->
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+
+    <link rel="stylesheet" href="./styleup.css">
+
+    <title>SignUp</title>
+</head>
+
+<body>
+    <nav class="nav container">
+        <a href="#" class="nav__logo">
+            <img src="./logo-nav.png">MANWHA
+        </a>
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                
+                <li class="nav__item">
+                    <a href="../index.html" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../index.html" class="nav__link">Program</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <div class="nav__link">
+                    <a href="#footer" class="button nav__button" onclick="login()" id="loginBtn">SIGN IN</a>
+                </div>
+                <div class="nav__link">
+                    <a href="#footer" class="button nav__button" onclick="register()" id="registerBtn">SIGN UP</a>
+                </div>
+            </ul>
+            <div class="nav__close" id="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+        </div>
+    </nav>
+    <!-- ========= Form Box ========== -->
+    <div class="form-box section">
+        <!-- ========= Login Form Box ========== -->
+        <div class="login container" id="login">
+            <div class="top">
+                <span>Don't Have An Account ? <a href="#" onclick="register()">Sign UP</a></span>
+                <h1>LOG IN</h1>
+            </div>
+            <div class="two-form">
+
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Username or  Email">
+                    <i class="ri-user-2-fill"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="ri-lock-fill"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot Password ? </a></label>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ========= Sign up Form Box ========== -->
+        <div class="register container" id="register">
+            <div class="top">
+                <span>Have An Account ? <a href="#" onclick="login()">Login</a></span>
+                <h1>SIGN UP</h1>
+            </div>
+            <div class="two-form">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Firstname">
+                    <i class="ri-user-2-fill"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Lastname">
+                    <i class="ri-user-2-fill"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Emai">
+                    <i class="ri-mail-line"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="ri-lock-fill"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & Conditions </a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--=============== MAIN JS ===============-->
+    <script src="./scriptup.js"></script>
+
+</body>
+
+</html>

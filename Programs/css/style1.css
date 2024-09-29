@@ -1,0 +1,1520 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(27, 72%, 55%);
+  --first-color-light: hsl(17, 97%, 77%);
+  --first-color-alt: hsl(29, 73%, 49%);
+  --first-color-dark: hsl(24, 75%, 48%);
+  --first-color-gray: hsl(79, 6%, 64%);
+  --title-color: hsl(180, 4%, 98%);
+  --title-color-black: hsl(0, 0%, 4%);
+  --text-color: hsl(180, 4%, 72%);
+  --text-color-light: hsl(180, 4%, 65%);
+  --body-color: hsl(180, 12%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Red Hat Display', sans-serif;
+  --second-font: 'Kaushan Script', cursive;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.5rem;
+  --big-font-size: 1.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+  --font-black: 900;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1600px) {
+  :root {
+    --biggest-font-size: 6rem;
+    --bigger-font-size: 3.5rem;
+    --big-font-size: 2.75rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1124px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.section {
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.section__data {
+  display: flex;
+  flex-direction: column;
+  row-gap: .75rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section__title,
+.section__title-border {
+  font-size: var(--big-font-size);
+  letter-spacing: 1.5px;
+}
+
+.section__subtitle {
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--first-color);
+  transform: rotate(-2deg);
+  margin-bottom: 1rem;
+}
+
+.section__titles {
+  display: flex;
+  column-gap: .75rem;
+  justify-content: center;
+}
+
+.section__title-border {
+  -webkit-text-stroke: 1px var(--text-color);
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.main {
+  overflow: hidden;
+  /* For animation ScrollReveal */
+}
+
+.color-red {
+  color: hsl(0, 80%, 64%);
+}
+
+.color-green {
+  color: var(--first-color);
+}
+
+.color-green {
+  color: var(--first-color);
+}
+
+.color-red {
+  color: hsl(0, 80%, 64%);
+}
+
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: background .3s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle {
+  color: var(--title-color);
+  display: flex;
+}
+
+.nav__logo {
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-bold);
+}
+
+.nav__logo img {
+  width: 1.25rem;
+}
+
+.nav__toggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    background-color: hsla(180, 12%, 8%, .8);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    border-left: 2px solid var(--first-color-gray);
+    transition: right .3s;
+  }
+}
+
+.nav__list {
+  padding: 5rem 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.nav__link {
+  color: var(--title-color);
+  transition: color .3s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+.nav .nav__button {
+  background-color: var(--title-color);
+  border: none;
+}
+
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+
+/* Change Background Header */
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 8px hsla(180, 12%, 4%, .3);
+}
+
+.active-link {
+  color: var(--first-color);
+}
+
+
+
+/* HOME */
+.home {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.home__container {
+  padding-top: 4rem;
+  row-gap: 2rem;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__subtitle {
+  font-size: var(--bigger-font-size);
+  -webkit-text-stroke: 1px var(--title-color);
+  color: transparent;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-black);
+  margin: .5rem 0;
+}
+
+.home__subtitle,
+.home__title {
+  letter-spacing: 1.5px;
+}
+
+.home__description {
+  margin-bottom: 2.5rem;
+}
+
+.home__triangle {
+  height: 275px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%)
+}
+
+.home__triangle-1 {
+  width: 105px;
+  background-color: var(--first-color);
+}
+
+.home__triangle-2 {
+  width: 205px;
+  background-color: var(--first-color-alt);
+}
+
+.home__triangle-3 {
+  width: 305px;
+  background-color: var(--first-color-dark);
+}
+
+.home__img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 480px;
+  height: 360px;
+  transform: translateX(-2.5rem);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 18px 32px;
+  border: 2px solid var(--first-color-light);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.button i {
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.button__flex:hover i {
+  transform: translateX(.35rem);
+}
+
+/*======= Position ========*/
+.position__container {
+  width: 50%;
+  height: 300px;
+  margin-top: 2rem;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.position__container,
+.section__subtitle {
+  font-size: var(--bigger-font-size);
+  text-align: center;
+}
+
+.position__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  /* Initially hide all images */
+}
+
+/* Show the active image */
+.position__img.active {
+  opacity: 1;
+  /* Only show the active image */
+}
+
+.p3_button {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.p3_button button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  align-items: center;
+  /* Vertically center items */
+  justify-content: center;
+  /* Horizontally center content */
+  gap: 0.5rem;
+  /* Space between icon and text */
+  background-color: var(--first-color);
+  padding: 5px 20px;
+  /* Adjust padding for better spacing */
+  border: 2px solid var(--first-color-light);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 0 0.5rem;
+  /* Adds some space between the buttons */
+}
+
+.p3_button button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.p3_button button i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+/* Move the left arrow to the left on hover */
+.p3_button button:hover .ri-arrow-left-line {
+  transform: translateX(-0.5rem);
+}
+
+/* Move the right arrow to the right on hover */
+.p3_button button:hover .ri-arrow-right-line {
+  transform: translateX(0.5rem);
+}
+
+/* Cardio */
+.cardio {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.cardio__container {
+  padding-top: 4rem;
+  row-gap: 2rem;
+}
+
+.cardio__data {
+  text-align: center;
+}
+
+.cardio__triangle {
+  height: 265px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%)
+}
+
+.cardio__triangle-1 {
+  width: 105px;
+  background-color: rgb(95, 95, 158);
+}
+
+.cardio__triangle-2 {
+  width: 205px;
+  background-color: rgb(84, 84, 167);
+}
+
+.cardio__triangle-3 {
+  width: 355px;
+  background-color: rgb(63, 63, 182);
+}
+
+.button1 {
+  display: inline-block;
+  background-color: rgb(130, 130, 185);
+  padding: 18px 32px;
+  border: 2px solid rgb(84, 84, 167);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.button1:hover {
+  background-color: rgb(63, 63, 182);
+}
+
+.button1 i {
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.button__flex:hover i {
+  transform: translateX(.35rem);
+}
+
+.cardio__img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 370px;
+  transform: translateX(2rem);
+
+}
+
+
+.cardio__container {
+  text-align: center;
+}
+
+/*======= Exercise ========*/
+.exercise__container {
+  width: 100%;
+  height: 300px;
+  margin-top: 2rem;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.section1__subtitle {
+  font-size: var(--bigger-font-size);
+  font-family: var(--second-font);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: rgb(130, 130, 185);
+  transform: rotate(-2deg);
+  margin-bottom: 1rem;
+}
+
+.exercise__container,
+.section1__subtitle {
+  font-size: var(--bigger-font-size);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.exercise__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  /* Initially hide all images */
+}
+
+.exercise__img.active {
+  opacity: 1;
+  /* Show only the active image */
+}
+
+
+.p2_button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.p2_button button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  align-items: center;
+  /* Vertically center items */
+  justify-content: center;
+  /* Horizontally center content */
+  gap: 0.5rem;
+  /* Space between icon and text */
+  background-color: rgb(130, 130, 185);
+  padding: 5px 20px;
+  /* Adjust padding for better spacing */
+  border: 2px solid rgb(63, 63, 182);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 0 0.5rem;
+  /* Adds some space between the buttons */
+}
+
+.p2_button button:hover {
+  background-color: rgb(63, 63, 182);
+}
+
+.p2_button button i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+/* Move the left arrow to the left on hover */
+.p2_button button:hover .ri-arrow-left-line {
+  transform: translateX(-0.5rem);
+}
+
+/* Move the right arrow to the right on hover */
+.p2_button button:hover .ri-arrow-right-line {
+  transform: translateX(0.5rem);
+}
+
+
+
+/* Flex Muscle */
+.flexmuscle {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.flexmuscle__container {
+  padding-top: 4rem;
+  row-gap: 1rem;
+}
+
+.flexmuscle__data {
+  text-align: center;
+}
+
+.flexmuscle__triangle {
+  height: 345px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%)
+}
+
+.flexmuscle__triangle-1 {
+  width: 105px;
+  background-color: hsl(79, 72%, 55%);
+}
+
+.flexmuscle__triangle-2 {
+  width: 205px;
+  background-color: hsl(79, 63%, 50%);
+}
+
+.flexmuscle__triangle-3 {
+  width: 355px;
+  background-color: hsl(79, 56%, 43%);
+}
+
+.button2 {
+  display: inline-block;
+  background-color: hsl(79, 72%, 55%);
+  padding: 18px 32px;
+  border: 2px solid hsl(79, 63%, 50%);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background .3s;
+  margin-top: 0.2rem;
+}
+
+.button2:hover {
+  background-color: hsl(79, 56%, 43%);
+}
+
+.button2 i {
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.button__flex:hover i {
+  transform: translateX(.35rem);
+}
+
+.flexmuscle__img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 400px;
+  transform: translateX(4.5rem);
+}
+
+/*======= Muscle ========*/
+/* Muscle Container Styles */
+
+.muscle__container {
+  width: 100%;
+  /* Ensure the container takes the full width available */
+  max-width: 500px;
+  /* Set a max-width to prevent excessive stretching */
+  height: 300px;
+  /* Fixed height for the slider */
+  margin: 2rem auto;
+  /* Center the container with top and bottom margins */
+  position: relative;
+  overflow: hidden;
+  /* Hide overflow to ensure images don’t spill outside the container */
+}
+
+/* Image Styling */
+.muscle__img {
+  width: 100%;
+  /* Ensure the image covers the full width of the container */
+
+  object-fit: cover;
+  /* Scale the image to cover the entire area while maintaining aspect ratio */
+  position: absolute;
+  /* Position images absolutely within the container */
+  top: 0;
+  /* Align the top of the image with the top of the container */
+  left: 0;
+  /* Align the left of the image with the left of the container */
+  transition: opacity 1s ease-in-out;
+  /* Smooth transition for opacity changes */
+  opacity: 0;
+  /* Initially hide all images */
+  margin-top: 3rem;
+}
+
+/* Active Image Styling */
+.muscle__img.active {
+  opacity: 1;
+  /* Show only the active image */
+}
+
+/* Button Styles */
+.p_button {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.p_button button {
+  display: inline-block;
+  background-color: hsl(79, 72%, 55%);
+  padding: 5px 15px;
+  border: 2px solid hsl(79, 63%, 50%);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background .3s;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.p_button button:hover {
+  background-color: hsl(79, 56%, 43%);
+}
+
+.p_button button i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+
+
+/* Move the left arrow to the left on hover */
+.p_button button:hover .ri-arrow-left-line {
+  transform: translateX(-0.5rem);
+}
+
+/* Move the right arrow to the right on hover */
+.p_button button:hover .ri-arrow-right-line {
+  transform: translateX(0.5rem);
+}
+
+.section2__subtitle {
+  font-size: var(--bigger-font-size);
+  font-family: var(--second-font);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: hsl(79, 63%, 50%);
+
+}
+
+/* WEIGHT LIFTING */
+
+.mulifting {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.mulifting__container {
+  padding-top: 4rem;
+  row-gap: 1rem;
+}
+
+.mulifting__data {
+  text-align: center;
+}
+
+.mulifting__triangle {
+  height: 345px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%)
+}
+
+.mulifting__triangle-1 {
+  width: 105px;
+  background-color: hsl(280, 4%, 58%);
+}
+
+.mulifting__triangle-2 {
+  width: 205px;
+  background-color: hsl(280, 2%, 47%);
+}
+
+.mulifting__triangle-3 {
+  width: 355px;
+  background-color: hsl(300, 2%, 34%);
+}
+
+.button3 {
+  display: inline-block;
+  background-color: hsl(280, 4%, 58%);
+  padding: 18px 32px;
+  border: 2px solid hsl(300, 2%, 34%);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background .3s;
+  margin-top: 0.2rem;
+}
+
+.button3:hover {
+  background-color: hsl(280, 2%, 47%);
+}
+
+.button3 i {
+  font-size: 1.25rem;
+  transition: transform .3s;
+}
+
+.button__flex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.mulifting__img {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 400px;
+
+}
+
+/*======= Lifts ========*/
+
+/* Style for the Lift Slider */
+.lift__container {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin-top: 2rem;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.section3__subtitle {
+  font-size: var(--bigger-font-size);
+  font-family: var(--second-font);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: hsl(280, 4%, 58%);
+  text-align: center;
+
+}
+
+.lift__img {
+  width: 100%;
+  height: 350px;
+  margin-top: 1rem;
+  object-fit: cover;
+  /* Ensure images cover the container area */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  /* Initially hide all images */
+}
+
+.lift__img.active {
+  opacity: 1;
+  /* Show only the active image */
+}
+
+.p4_button {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.p4_button button {
+  display: inline-block;
+  background-color: hsl(280, 4%, 58%);
+  padding: 5px 15px;
+  border: 2px solid hsl(300, 2%, 34%);
+  color: var(--title-color-black);
+  cursor: pointer;
+  transition: background .3s;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.p4_button button:hover {
+  background-color: hsl(280, 2%, 47%);
+}
+
+.p4_button button i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+/* Move the left arrow to the left on hover */
+.p4_button button:hover .ri-arrow-left-line {
+  transform: translateX(-0.5rem);
+}
+
+/* Move the right arrow to the right on hover */
+.p4_button button:hover .ri-arrow-right-line {
+  transform: translateX(0.5rem);
+}
+
+
+/*============ FOOTER =============*/
+.footer__container {
+  row-gap: 4rem;
+  padding-top: 1rem;
+}
+
+.footer__logo,
+.footer__description {
+  color: var(--title-color);
+}
+
+.footer__logo,
+.footer__form,
+.footer__social {
+  display: flex;
+}
+
+.footer__logo {
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+}
+
+.footer__logo img {
+  width: 1.5rem;
+}
+
+.footer__description {
+  margin-bottom: 2rem;
+}
+
+.footer__form {
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer__input {
+  padding: 20px 56px 20px 24px;
+  border: 2px solid var(--first-color-light);
+  background: transparent;
+  color: var(--text-color);
+  outline: none;
+}
+
+.footer__content,
+.footer__links,
+.footer__group {
+  display: grid;
+}
+
+.footer__content {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3.5rem;
+}
+
+.footer__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.footer__links {
+  row-gap: .75rem;
+}
+
+.footer__link {
+  color: var(--text-color);
+  transition: color .3s;
+}
+
+.footer__link:hover {
+  color: var(--first-color);
+}
+
+.footer__group {
+  margin-top: 5rem;
+  justify-items: center;
+  row-gap: 2rem;
+}
+
+.footer__social {
+  column-gap: 1.25rem;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  padding: .35rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--title-color-black);
+  transition: background .4s;
+}
+
+.footer__social-link:hover {
+  background-color: var(--first-color-dark);
+}
+
+.footer__copy {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.footer__message {
+  position: absolute;
+  transform: translateY(1rem);
+}
+
+
+/*============ SCROLL BAR =============*/
+::-webkit-scrollbar {
+  width: 1rem;
+  border-radius: .5rem;
+  background-color: hsl(79, 4%, 15%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(79, 4%, 25%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(79, 4%, 35%);
+  border-radius: .5rem;
+}
+
+/*============ SCROLL UP =============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  background-color: var(--first-color);
+  display: inline-flex;
+  padding: .35rem;
+  color: var(--title-color-black);
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  transition: .3s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.25rem);
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/*======= FOR SMALL DEVICES =======*/
+@media screen and (max-width: 380px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .section__titles {
+    flex-direction: column;
+    row-gap: 0.25rem;
+  }
+  .home__img{
+    transform: translateX(-90px);
+  }
+
+  .home__triangle {
+    height: 280px;
+  }
+
+  .home__triangle-3 {
+    width: 350px;
+  }
+
+  .position__container {
+    text-align: center;
+  }
+
+  .section__subtitle {
+    text-align: center;
+    margin-bottom: 1rem;
+    /* Adds space below the subtitle */
+  }
+
+  .position__container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .position__img {
+    width: 175px;
+    height: auto;
+    transform: translateX(5.5rem);
+  }
+
+  .p3_button {
+    margin-top: 2rem;
+  }
+
+  .flexmuscle__img {
+    height: auto;
+    width: 250px;
+    transform: translateX(2.5rem);
+  }
+
+  .mulifting__img {
+    width: 250px;
+    height: auto;
+  }
+  .muscle__img{
+    margin-bottom: 20px;
+  }
+
+  .p_button {
+    margin-top: 1px;
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*======= FOR MEDIUM DEVICES =======*/
+@media screen and (min-width:768px) {
+  .nav__menu {
+    width: 45%;
+  }
+
+  .home__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home__data {
+    text-align: initial;
+  }
+
+  .home__img {
+    width: auto;
+    height: 400px;
+    transform: translateX(1px);
+  }
+
+  .home__triangle {
+    height: 380px;
+  }
+
+  .home__triangle-3 {
+    width: 350px;
+  }
+  
+
+  .position__container .position__img {
+    height: 280px;
+    width: 245px;
+    transform: translateX(90px);
+  }
+
+  .cardio__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardio__data {
+    text-align: initial;
+  }
+
+  .cardio__img {
+    width: auto;
+    height: 375px;
+    transform: translateX(20px);
+  }
+
+  .cardio__triangle {
+    height: 380px;
+  }
+
+  .cardio__triangle-3 {
+    width: 350px;
+  }
+
+  .section1__subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .p2_button {
+    margin-top: 3rem;
+  }
+
+  .exercise__container {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin-top: 2rem;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .flexmuscle__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flexmuscle__data {
+    text-align: initial;
+  }
+
+  .flexmuscle__img {
+    width: auto;
+    height: 345px;
+    transform: translateX(70px);
+  }
+
+  .flexmuscle__triangle {
+    height: 380px;
+  }
+
+  .flexmuscle__triangle-3 {
+    width: 350px;
+  }
+
+  .muscle__container {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    margin-top: 2rem;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .p_button {
+    margin-top: 3rem;
+  }
+
+  .mulifting__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mulifting__data {
+    text-align: initial;
+  }
+
+  .mulifting__img {
+    width: auto;
+    height: 325px;
+    transform: translateX(15px);
+  }
+
+  .mulifting__triangle {
+    height: 380px;
+  }
+
+  .mulifting__triangle-3 {
+    width: 350px;
+  }
+
+  .lift__container {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    margin-top: 2rem;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+
+  .nav__menu {
+    width: initial;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    column-gap: 4rem;
+  }
+
+  .section {
+    padding: 7rem 0 0;
+
+  }
+
+  .home__container {
+    grid-template-columns: repeat(2, max-content);
+    align-items: initial;
+  }
+
+  .home__title {
+    margin: .75rem 0 1.25rem;
+  }
+
+  .home__subtitle {
+    font-size: 100px;
+  }
+
+  .home__title {
+    font-size: 100px;
+  }
+
+  .home__description {
+    width: 445px;
+    margin-bottom: 3rem;
+  }
+
+  .home__img {
+    height: 496px;
+    transform: translateX(-6rem);
+  }
+
+  .home__triangle {
+    height: 600px;
+  }
+
+  .home__triangle-1 {
+    width: 145px;
+  }
+
+  .home__triangle-2 {
+    width: 345px;
+  }
+
+  .home__triangle-3 {
+    width: 545px;
+  }
+
+  .p3_button {
+    display: none;
+  } 
+  .position__img.active {
+    display: none;
+  }
+  .section__subtitle{
+    font-size: 70px;
+  }
+
+
+  .cardio__container{
+    grid-template-columns: repeat(2, max-content);
+    align-items: initial;
+  }
+  .cardio__img{
+    height: 496px;
+    transform: translateX(-30px);
+  }
+  .cardio__triangle{
+    height: 600px;
+  }
+  .cardio__triangle-1{
+    width: 145px;
+  }
+  .cardio__triangle-2{
+    width: 345px;
+  }
+  .cardio__triangle-3{
+    width: 545px;
+  }
+  .p2_button{
+    display: none;
+  }
+  .exercise__img{
+    display: none;
+  }
+  .section1__subtitle{
+    font-size: 70px;
+  }
+
+
+  .flexmuscle__container{
+    grid-template-columns: repeat(2, max-content);
+    align-items: initial;
+  }
+  .flexmuscle__img{
+    height: 496px;
+    transform: translateX(240px);
+  }
+  .flexmuscle__triangle{
+    height: 600px;
+  }
+  .flexmuscle__triangle-1{
+    width: 145px;
+  }
+  .flexmuscle__triangle-2{
+    width: 345px;
+  }
+  .flexmuscle__triangle-3{
+    width: 545px;
+  }
+  .p_button{
+    display: none;
+  }
+  .section2__subtitle{
+    font-size: 70px;
+  }
+  .muscle__img{
+    display: none;
+  }
+
+
+  .mulifting__container{
+    grid-template-columns: repeat(2, max-content);
+    align-items: initial;
+  }
+  .mulifting__img{
+    height: 496px;
+    transform: translateX(200px)
+  }
+  .mulifting__triangle{
+    height: 600px;
+  }
+  .mulifting__triangle-1{
+    width: 145px;
+  }
+  .mulifting__triangle-2{
+    width: 345px;
+  }
+  .mulifting__triangle-3{
+    width: 545px;
+  }
+  .p4_button{
+    display: none;
+  }
+  .section3__subtitle{
+    font-size: 70px;
+  }
+  .lift__img{
+    display: none;
+  }
+  .footer__form{
+    flex-direction: row;
+  }
+  .footer__description{
+    font-size: 20px;
+  }
+  .footer__content{
+    column-gap: 5rem;
+  }
+  .footer__group{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    margin-top: 6rem;
+  }
+  .footer__social{
+    order: 1;
+  }
+  .footer__links{
+    font-size: 20px;
+  }
+  .footer__title{
+    font-size: 30px;
+  }
+}

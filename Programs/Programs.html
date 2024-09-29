@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICON ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/style1.css">
+
+    <title>Programs</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="img/logo-nav.png">MANWHA
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Yoga</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#cardio" class="nav__link">Cardio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#muscle" class="nav__link">Muscle Flex</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#lifting" class="nav__link">Weight Lifting</a>
+                    </li>
+                    <div class="nav__link">
+                        <a href="#footer" class="button nav__button">
+                            Register Now
+                        </a>
+                    </div>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== Yoga ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h2 class="home__subtitle">BE ONE</h2>
+                    <h1 class="home__title">WITH YOUR BODY</h1>
+                    <P class="home__description">
+                        Yoga is an ancient practice that harmonizes the mind, body, and spirit through a series of
+                        physical postures, breath control, and meditation techniques.
+                    </P>
+                    <a href="#" class="button button__flex">
+                        Lets Begin<i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="home__images">
+                    <img src="img/Yoga.png" class="home__img">
+
+                    <div class="home__triangle home__triangle-3"></div>
+                    <div class="home__triangle home__triangle-2"></div>
+                    <div class="home__triangle home__triangle-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== Position ====================-->
+        <section class="position section">
+            <div class="position__container container grid">
+                <div><h2 class="section__subtitle">Different Asans</h2></div>
+                
+                <img src="img/Yoga11.png" class="position__img" alt="Yoga 11">
+                <img src="img/Yoga13.png" class="position__img" alt="Yoga 13">
+                <img src="img/Yoga14.png" class="position__img" alt="Yoga 14">
+            </div>
+
+            <div class="p3_button">
+                <button onclick="goPreviousPosition()"><i class="ri-arrow-left-line"></i> PREVIOUS</button>
+                <button onclick="goNextPosition()">NEXT <i class="ri-arrow-right-line"></i></button>
+            </div>
+        </section>
+
+
+        <!--==================== Cardio ====================-->
+        <section class="cardio section" id="cardio">
+            <div class="cardio__container container grid">
+                <div class="cardio__data">
+                    <h2 class="home__subtitle">KEEP YOUR</h2>
+                    <h1 class="home__title">BODY IN MOTION</h1>
+                    <P class="home__description">
+                        Cardio exercises are designed to elevate your heart rate, improve cardiovascular health, and
+                        boost endurance.
+                    </P>
+                    <a href="#" class="button1 button__flex">
+                        Lets Begin<i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="cardio__images">
+                    <img src="img/CArdio.png" class="cardio__img">
+
+                    <div class="cardio__triangle cardio__triangle-3"></div>
+                    <div class="cardio__triangle cardio__triangle-2"></div>
+                    <div class="cardio__triangle cardio__triangle-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== Exercises ====================-->
+        <section class="exercise section">
+            <div class="exercise__container grid">
+                <h2 class="section1__subtitle">Different Exercises</h2>
+                <img src="img/cardio1.png" class="exercise__img" alt="Cardio 1">
+                <img src="img/cardio2.png" class="exercise__img" alt="Cardio 2">
+                <img src="img/cardio3.png" class="exercise__img" alt="Cardio 3">
+            </div>
+            <div class="p2_button">
+                <button onclick="goPreviousExercise()"><i class="ri-arrow-left-line"></i> PREVIOUS</button>
+                <button onclick="goNextExercise()">NEXT <i class="ri-arrow-right-line"></i></button>
+            </div>
+        </section>
+
+        <!--==================== Flex Muscle ====================-->
+        <section class="flexmuscle section" id="muscle">
+            <div class="flexmuscle__container container grid">
+                <div class="flexmuscle__data">
+                    <h2 class="home__subtitle">LET YOUR </h2>
+                    <h1 class="home__title">MUSCLES RELAX</h1>
+                    <P class="home__description">
+                        Flexing means bending a joint or contracting a muscle to decrease the angle between two body
+                        parts.
+                    </P>
+                    <a href="#" class="button2 button__flex">
+                        Lets Begin<i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="flexmuscle__images">
+                    <img src="./img/mus1.png" class="flexmuscle__img">
+
+                    <div class="flexmuscle__triangle flexmuscle__triangle-3"></div>
+                    <div class="flexmuscle__triangle flexmuscle__triangle-2"></div>
+                    <div class="flexmuscle__triangle flexmuscle__triangle-1"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== Muscle ====================-->
+        <section class="muscle section">
+            <div class="muscle__container grid">
+                <h2 class="section2__subtitle">Muscle Flexing</h2>
+                <img src="./img/musc2.png" class="muscle__img">
+                <img src="./img/musc3.png" class="muscle__img">
+                <img src="./img/musc4.png" class="muscle__img">
+            </div>
+            <div class="p_button">
+                <button onclick="goPreviousMuscle()"><i class="ri-arrow-left-line"></i> PREVIOUS</button>
+                <button onclick="goNextMuscle()">NEXT <i class="ri-arrow-right-line"></i></button>
+            </div>
+        </section>
+
+
+
+        <!--==================== MUSCLE LIFTING ====================-->
+        <section class="mulifting section" id="lifting">
+            <div class="mulifting__container container grid">
+                <div class="mulifting__data">
+                    <h2 class="home__subtitle">KEEP LIFTING </h2>
+                    <h1 class="home__title">KEEP BUILDING</h1>
+                    <P class="home__description">
+                        Our Weight Lifting program is designed to help you build muscle, enhance your physical power,
+                        and achieve your fitness goals.
+                    </P>
+                    <a href="#" class="button3 button__flex">
+                        Lets Begin<i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+                <div class="mulifting__images">
+                    <img src="./img/Lif1.png" class="mulifting__img">
+
+                    <div class="mulifting__triangle mulifting__triangle-3"></div>
+                    <div class="mulifting__triangle mulifting__triangle-2"></div>
+                    <div class="mulifting__triangle mulifting__triangle-1"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--==================== Lifts ====================-->
+        <section class="lift section"> 
+            <div class="lift__container grid">
+                <h2 class="section3__subtitle">Different Lifts</h2>
+                <img src="./img/lift2.png" class="lift__img">
+                <img src="./img/lift3.png" class="lift__img">
+                <img src="./img/lift4.png" class="lift__img">
+            </div>
+            <div class="p4_button">
+                <button onclick="goPreviousLift()"><i class="ri-arrow-left-line"></i> PREVIOUS</button>
+                <button onclick="goNextLift()">NEXT <i class="ri-arrow-right-line"></i></button>
+            </div>
+        </section>
+    </main>
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section" id="footer">
+            <div class="footer__container container grid">
+                <div>
+                    <a href="#" class="footer__logo">
+                        <img src="img/logo-nav.png">MANWHA
+                    </a>
+                    <p class="footer__description">
+                        Subscribe for company <br> updates below.
+                    </p>
+
+                    <form action="" class="footer__form" id="contact-form">
+                        <input type="email" name="user_email" placeholder="Your Email" class="footer__input" id="contact-user">
+                        <button type="submit" class="button">
+                            Subscribe
+                        </button>
+                    </form>
+
+                    <p class="footer__message" id="contact-message"></p>
+                </div>
+
+                <div class="footer__content">
+                    <div>
+                        <h3 class="footer__title">
+                            SERVICES
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Flex Muscle</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Cardio Exercises</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Basic Yoga</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Weight Lifting</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            PRICING
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Basic</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Premium</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Diamond</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            COMPANY
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Customers</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Partners</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="footer__group">
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </ul>
+
+                    <span class="footer__copy">
+                        &#169; Copyright Bedimcode. All rights reserved
+                    </span>
+                </div>
+            </div>
+        </footer>
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a>
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="./js/scrollreveal.min.js"></script>
+
+        <!--=============== EMAIL JS ===============-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main1.js"></script>
+</body>
+
+</html>
